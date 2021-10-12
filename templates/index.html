@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+  <title>Students Marks</title>
+</head>
+<body>
+<div>
+ 
+    <form method="GET" action="/findstudent">
+    <p>Enter student ID to get the mark</p>
+
+  <input  id="studentID" type="text" placeholder="Enter ID" name="studentID"> </input>
+  <br>
+  <button type="submit" >submit</button>
+</form>
+  <br>
+</div>
+{% if name and mark and studentid %}
+ <div> 
+  <span>student name:</span> <span> {{name}} </span> 
+    <br>
+  <span>student ID:</span> <span> {{studentid}}</span> 
+    <br>
+  <span>student mark:</span> <span> {{mark}} </span> 
+ </div> 
+ {% endif %}
+</body>
+<style>
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+p, span {
+font-size: 20px;
+}
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
