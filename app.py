@@ -37,19 +37,5 @@ def find_student():
         if type(db)==MongoClient:
             db.close()
 
-@app.route('/students')
-def get_sudents():
-    db=""
-    try:
-        db = get_db()
-        _animals = db.studentID_tb.find()
-        animals = [{"id": animal["id"], "name": animal["name"], "mark": animal["mark"]} for animal in _animals]
-        return jsonify({"animals": animals})
-    except:
-        pass
-    finally:
-        if type(db)==MongoClient:
-            db.close()
-
 if __name__=='__main__':
     app.run(host="0.0.0.0", port=5000)
